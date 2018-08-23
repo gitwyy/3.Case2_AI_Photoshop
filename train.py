@@ -89,12 +89,12 @@ def train():
 def re_train():
     # 确保包含所有图片的 images 文件夹在所有 Python 文件的同级目录下
     # 当然了，你也可以自定义文件夹名和路径
-    if not os.path.exists("trump"):
+    if not os.path.exists("images"):
         raise Exception("包含所有图片的 images 文件夹不在此目录下，请添加")
 
     # 获取训练数据
     data = []
-    for image in glob.glob("trump/*"):
+    for image in glob.glob("images/*"):
         image_data = misc.imread(image)  # imread 利用 PIL 来读取图片数据
         data.append(image_data)
     print("训练数据已加载")
